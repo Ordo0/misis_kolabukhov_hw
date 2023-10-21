@@ -19,7 +19,7 @@ class Board:
     def print_board(self):
         print("┌───┬───┬───┐")
         for i in range(0, 9, 3):
-            row = self.cells[i:i+3]
+            row = self.cells[i:i + 3]
             print("│ {} │ {} │ {} │".format(*row))
             if i < 6:
                 print("├───┼───┼───┤")
@@ -36,7 +36,8 @@ class Board:
         ]
 
         for combination in winning_combinations:
-            if all(self.cells[cell - 1].is_occupied and str(self.cells[cell - 1]) == player.symbol for cell in combination):
+            if all(self.cells[cell - 1].is_occupied and str(self.cells[cell - 1]) == player.symbol for cell in
+                   combination):
                 return True
 
         return False
@@ -60,7 +61,7 @@ class Player:
                     cell.occupy(self.symbol)
                     break
             except ValueError:
-                print("Некоректный ввод. Введите число от 1 до 9.")
+                print("Некорректный ввод. Введите число от 1 до 9.")
 
 
 def play_game():
